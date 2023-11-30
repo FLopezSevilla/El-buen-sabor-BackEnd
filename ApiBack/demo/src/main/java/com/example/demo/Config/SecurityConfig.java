@@ -47,7 +47,7 @@ public class SecurityConfig{
                                         .requestMatchers(new AntPathRequestMatcher("/api/v1/u.d/**")).hasAnyAuthority("REPARTIDOR","CLIENTE")
                                         .requestMatchers(new AntPathRequestMatcher("/api/v1/u.ca/**")).hasAnyAuthority("CAJERO","CLIENTE")
                                         .requestMatchers(new AntPathRequestMatcher("/api/v1/u.co/**")).hasAnyAuthority("COCINERO","CLIENTE")
-                                        //.anyRequest().authenticated()
+                                        .anyRequest().authenticated()
                 )
                 .headers(headers -> headers.frameOptions(HeadersConfigurer.FrameOptionsConfig::disable)) //H2
                 .sessionManagement(sessionManager->
